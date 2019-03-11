@@ -10,6 +10,9 @@ If (Project="error")
  InputBox, Project , New, Enter the overleaf address,
  IniWrite, %Project%, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass
  }
+else {
+   Run %Project%
+ }
 
 ; These are the hotkey <^>! means AltGr
 <^>!F1::This_Hotkey("Guide")
