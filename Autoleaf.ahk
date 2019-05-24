@@ -4,15 +4,15 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; This stores settings (which file to open) one the computer - this is run when the program is run for the first time
-IniRead, Project, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass,error
-If (Project="error")
- {
- InputBox, Project , New, Enter the overleaf address,
- IniWrite, %Project%, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass
- }
-else {
-   Run %Project%
- }
+; IniRead, Project, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass,error
+; If (Project="error")
+;  {
+;  InputBox, Project , New, Enter the overleaf address,
+;  IniWrite, %Project%, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass
+;  }
+; else {
+;    Run %Project%
+;  }
 
 ; These are the hotkey <^>! means AltGr
 <^>!F1::This_Hotkey("Guide")
@@ -34,10 +34,10 @@ else {
 This_Hotkey(key) {
 
 ;This resets the project folder
-	if (key = "SetProject") {
-		InputBox, Project , New, Enter the overleaf address,
-	  IniWrite, %Project%, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass
-	}
+	; if (key = "SetProject") {
+	; 	InputBox, Project , New, Enter the overleaf address,
+	;   IniWrite, %Project%, %A_ScriptFullPath%:Stream:$DATA, Settings, Pass
+	; }
 
 ;This reloads the project - used for easily testing changes to the program
 	if (key = "Reload") {
@@ -55,7 +55,7 @@ Overview of shortcuts:
 AltGr + F = figure
 AltGr + M = Minipage
 AltGr + T = "Fake" tabular
-AltGr + S = Source
+AltGr + L = Litteratur
 AltGr + F2 = Change project path
 
 	)
